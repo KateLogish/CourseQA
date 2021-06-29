@@ -1,0 +1,28 @@
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir folderName
+3) Зайти в папку - cd pathToFolder
+4) Создать 3 папки -  mkdir folder1 folder2 folder3 
+5) Зайти в любоую папку - cd folder1
+6) Создать 5 файлов (3 txt, 2 json) - touch file1.txt file2.txt file3.txt file4.json file5.json
+7) Создать 3 папки - mkdir folder1 folder2 folder3
+8. Вывести список содержимого папки -   ls -la
+9) + Открыть любой txt файл -    cat file1.txt / vim file1.txt
+10) + написать туда что-нибудь, любой текст. -   i "text" -> esc 
+11) + сохранить и выйти. -  :wq
+12) Выйти из папки на уровень выше -   cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. mv folder1/file1.txt folder2/file1.txt OR mv file1 folder2
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. cp folder2/file1.txt folder1/file.1 OR cp file1.txt folder1
+15) Найти файл по имени find file1.txt 
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.  cat file1.txt |grep bash
+17) вывести несколько первых строк из текстового файла - head file1.txt
+18) вывести несколько последних строк из текстового файла - tail file1.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. less file1.txt ( enter - построчная прокрутка, space - постраничная прокрутка, q - для выхода)
+20) вывести дату и время - date 
+=========
+
+Задание *
+1) Отправить http запрос на сервер. - как отправить ссылку из терминала линукс
+https://api.quarantine.country/api/v1/regions     curl -i https://api.quarantine.country/api/v1/regions
+
+2) Написать Bash скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
