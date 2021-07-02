@@ -12,17 +12,23 @@
 12) Выйти из папки на уровень выше -   cd ..
 —
 13) переместить любые 2 файла, которые вы создали, в любую другую папку. mv folder1/file1.txt folder2/file1.txt OR mv file1 folder2
-14) скопировать любые 2 файла, которые вы создали, в любую другую папку. cp folder2/file1.txt folder1/file.1 OR cp file1.txt folder1
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. cp folder2/file1.txt folder1/file1.txt OR cp file1.txt folder1
 15) Найти файл по имени find file1.txt 
 16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.  cat file1.txt |grep bash
 17) вывести несколько первых строк из текстового файла - head file1.txt / head -n 10 file1.txt - 10 строк
-18) вывести несколько последних строк из текстового файла - tail file1.txt
+18) вывести несколько последних строк из текстового файла - tail file1.txt / tail -n 10 file1.txt - 10 строк
 19) просмотреть содержимое длинного файла (команда less) изучите как она работает. less file1.txt ( enter - построчная прокрутка, space - постраничная прокрутка, q - для выхода)
 20) вывести дату и время - date 
 =========
 
 Задание *
-1) Отправить http запрос на сервер. - как отправить ссылку из терминала линукс
-https://api.quarantine.country/api/v1/regions     curl -i https://api.quarantine.country/api/v1/regions
+1) Отправить http запрос на сервер. - https://api.quarantine.country/api/v1/regions     
+
+curl -i https://api.quarantine.country/api/v1/regions
 
 2) Написать Bash скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+ 1.создать файл txt (script.txt)
+ 2. в первой строке файла прописать: #!/bin/bash
+ 3. прописать все действия, которые должен выполнить скрипт (script.txt) (см https://github.com/KateLogish/CourseQA/blob/master/script.txt )
+ 4. сделать файл исполняемым  chmod ugo+x script.txt
+ 5. запустить исполнение ./script.txt
