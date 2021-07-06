@@ -1,0 +1,12 @@
+Id
+Test Case ID
+Severity
+Priority
+Name
+Summary
+Prerequisites
+Environment
+Steps to reproduce
+Actual Result
+Expected Result
+Attachments
