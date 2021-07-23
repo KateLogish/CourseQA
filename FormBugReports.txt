@@ -1,0 +1,2 @@
+Here is the document containing bug reports created while tesing registration web form: 
+https://docs.google.com/document/d/11XV4FldePdmPYB8uyt6xRIr5U0VQbmteiXimlw6TcrM/edit?usp=sharing
