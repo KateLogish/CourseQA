@@ -1,6 +1,8 @@
 1. Найдите номер модели, скорость и размер жесткого диска для всех ПК стоимостью менее 500 дол. Вывести: model, speed и hd:
 
-select model, speed, hd from pc where price < 500
+select model, speed, hd 
+from pc 
+where price < 500
 
 model	speed	hd
 1232	500	10.0
@@ -11,7 +13,8 @@ model	speed	hd
 
 2. Найдите производителей принтеров. Вывести: maker:
 
-Select distinct maker from product 
+Select distinct maker 
+from product 
 Where type='printer'
 
 maker
@@ -21,7 +24,9 @@ E
 
 3. Найдите номер модели, объем памяти и размеры экранов ПК-блокнотов, цена которых превышает 1000 дол.
 
-Select model, ram, screen from laptop where price > 1000
+Select model, ram, screen 
+from laptop 
+where price > 1000
 
 model	ram	screen
 1750	128	14
@@ -31,7 +36,9 @@ model	ram	screen
 
 4. Найдите все записи таблицы Printer для цветных принтеров:
 
-Select * from Printer where color='y'
+Select * 
+from Printer 
+where color='y'
 
 
 code	model	color	type	price
@@ -41,7 +48,8 @@ code	model	color	type	price
 
 5. Найдите номер модели, скорость и размер жесткого диска ПК, имеющих 12x или 24x CD и цену менее 600 дол.:
 
-Select model, speed, hd from PC
+Select model, speed, hd 
+from PC
 Where (cd='12x' or cd='24x') and price<600
 
 model	speed	hd
@@ -49,3 +57,74 @@ model	speed	hd
 1232	450	8.0
 1232	450	10.0
 1260	500	10.0
+
+
+6. Для каждого производителя, выпускающего ПК-блокноты c объёмом жесткого диска не менее 10 Гбайт, найти скорости таких ПК-блокнотов. Вывод: производитель, скорость.
+
+Select distinct Product.maker, Laptop.speed 
+from Laptop
+Inner join Product on Laptop.model=Product.model
+Where Laptop.hd>=10
+
+maker	speed
+A	450
+A	600
+A	750
+B	750
+
+
+7. Найдите номера моделей и цены всех имеющихся в продаже продуктов (любого типа) производителя B (латинская буква).
+
+select Product.model, price
+From Product, PC
+Where maker='B' and Product.model=PC.model
+union
+select Product.model, price
+From Product, Printer
+Where maker='B' and Product.model=Printer.model
+union
+select Product.model, price
+From Product, Laptop
+Where maker='B' and Product.model=Laptop.model
+
+model	price
+1121	850.0000
+1750	1200.0000
+
+
+8. Найдите производителя, выпускающего ПК, но не ПК-блокноты.
+
+Select distinct maker 
+from Product
+Where type ='PC' 
+Except
+Select maker from Product
+Where type in ('Laptop')
+
+maker
+E
+
+
+9. Найдите производителей ПК с процессором не менее 450 Мгц. Вывести: Maker
+
+Select distinct maker 
+from Product
+Inner Join PC on Product.model = PC.model
+Where Product.type = 'PC' and PC.speed >=450
+
+maker
+A
+B
+E
+
+
+10. Найдите модели принтеров, имеющих самую высокую цену. Вывести: model, price
+
+Select model, price 
+from Printer
+Where price=(Select max(Price) from Printer)
+
+model	price
+1288	400.0000
+1276	400.0000
+
