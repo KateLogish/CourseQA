@@ -128,3 +128,61 @@ model	price
 1288	400.0000
 1276	400.0000
 
+
+11. Найдите среднюю скорость ПК.
+
+Select avg(speed) as AvgSpeed from PC
+
+AvgSpeed
+608
+
+
+12. Найдите среднюю скорость ПК-блокнотов, цена которых превышает 1000 дол.
+
+Select avg(speed) as AvgSpeed from Laptop 
+Where price > 1000
+
+AvgSpeed
+700
+
+
+13. Найдите среднюю скорость ПК, выпущенных производителем A.
+
+Select avg(speed) as AvgSpeed from PC
+Inner join Product on Product.model = PC.model
+Where Product.maker = 'A'
+
+AvgSpeed
+606
+
+
+14. Найдите класс, имя и страну для кораблей из таблицы Ships, имеющих не менее 10 орудий.
+
+Select Classes.class, Ships.name, Classes.country
+from Ships inner join Classes
+on Ships.class = Classes.class
+where Classes.numGuns > = 10
+
+class	name	country
+Tennessee	California	USA
+North Carolina	North Carolina	USA
+North Carolina	South Dakota	USA
+Tennessee	Tennessee	USA
+North Carolina	Washington	USA
+
+
+15. Найдите размеры жестких дисков, совпадающих у двух и более PC. Вывести: HD 
+
+Select hd  from PC
+Group by hd
+Having count (hd) >= 2
+
+
+hd
+5.0
+8.0
+10.0
+14.0
+20.0
+
+
