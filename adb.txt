@@ -1,0 +1,22 @@
+adb device -l -> просмотр подключенных девайсов
+adb start-server -> запуск сервера
+adb kill-server -> отключение сервера
+adb tcpip 5555 -> установление порта для связи девайса и сервера
+adb connect DEVICE_IP:5555 -> подключение к девайсу по IP
+adb -s "device serial number" install "path-to-apk" -> установить приложение на девайс
+adb -s "device number" shell pm list packages -f - осмотреть список установленных пакетов
+abb shell - открыть консоль для андроида (далее все команды работают в ней)
+CRTL+D / exit - для выхода из андроид консоли
+adb install "path to apk" - установить приложение
+adb uninstall 'packagename" - удалить приложение (как найти packagename: adb shell -> pm list packages -> найти имя приложения)
+adb push "path to file on PC" "path on device" -скопировать файл с компьютера в телефон
+adb pull "path to file on device" "path on PC" - скопировать файл с девайса на комп
+adb shell -> pm uninstall --user 0 "packagename" - удалить приложение с девайса
+adb shell -> monkey -p "package name" 1 - запуск приложения 
+adb shell -> pm disable-user --user 0 "package name" - отключить приложение
+adb shell -> pm list packages -d -просмотреть отключенные приложения 
+adb shell -> pm enable "packagename" - запустить удаленное приложение
+adb shell am start -a android.intent.action.MAIN -n packageName 
+
+
+
