@@ -1,0 +1,8 @@
+#!/bin/bash
+cd C:/testing
+mkdir kltest1 kltest2 kltest3
+cd kltest1
+touch file1.txt file2.txt file3.txt file4.json file5.json
+mkdir fold1 fold2 fold3
+ls -la
+mv C:/testing/kltest1/file1.txt C:/testing/kltest1/file2.txt C:/testing/kltest2
