@@ -1,6 +1,0 @@
-ID
-Module
-Name
-Idea
-Status
-
